@@ -16,6 +16,12 @@ namespace KoffieMachine
         private int Melkpoeder;
 
         // Vergeet de constructor niet
+        public KoffieMachine(int AantalSuikerklontjes, int Aantalkoffiebonen, int AantalMelkpoeder)
+        {
+            Suikerklontjes = AantalSuikerklontjes;
+            Koffiebonen = Aantalkoffiebonen;
+            Melkpoeder = AantalMelkpoeder;
+        }
         // en stel de private fields / velden in
 
         private void ControleerResources()
