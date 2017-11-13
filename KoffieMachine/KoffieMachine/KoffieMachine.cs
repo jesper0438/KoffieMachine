@@ -10,8 +10,10 @@ namespace KoffieMachine
         private int Suikerklontjes;
 
         // Het aantal koffiebonen
+        private int Koffiebonen;
 
         // Het aantal gram melkpoeder
+        private int Melkpoeder;
 
         // Vergeet de constructor niet
         // en stel de private fields / velden in
@@ -21,6 +23,14 @@ namespace KoffieMachine
             if( this.Suikerklontjes < 0)
             {
                 throw new Exception("DE SUIKER IS OP!!!");
+            }
+            if( this.Koffiebonen < 0)
+            {
+                throw new Exception("BONEN OP");
+            }
+            if( this.Melkpoeder <0)
+            {
+                throw new Exception("Melk op");
             }
 
             // Vul dit aan voor de overige velden
