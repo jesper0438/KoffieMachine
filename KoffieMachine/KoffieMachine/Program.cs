@@ -6,7 +6,13 @@ namespace KoffieMachine
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // maak de koffiemachine aan
+            
+            // neem een bekertje koffie
+
+            // bekertje.Print();
+
+            // Doe dit net zo vaak totdat er een exeption optreedt
         }
     }
 }
