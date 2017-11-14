@@ -9,16 +9,23 @@ namespace KoffieMachine
             // maak de koffiemachine aan
             KoffieMachine italiaansekoffiemachine = new KoffieMachine(20,20,20);
 
-            // neem een bekertje koffie
-            //Console.WriteLine(italiaansekoffiemachine.GeefCappuccino());
-            //Console.WriteLine(italiaansekoffiemachine.GeefKoffiezwart());
-            //Console.WriteLine(italiaansekoffiemachine.GeefLattemacchiato());
-            italiaansekoffiemachine.GeefCappuccino().Print();
-            italiaansekoffiemachine.GeefKoffiezwart().Print();
-            italiaansekoffiemachine.GeefLattemacchiato().Print();
+            Bekertje koffiezwart = italiaansekoffiemachine.GeefKoffiezwart();
 
-            // Bekertje beker = new Bekertje(KoffieSoort.cappuccino);
-            // bekertje.Print();
+            koffiezwart.Print();
+            Console.WriteLine(italiaansekoffiemachine);
+            //System.Threading.Thread.Sleep(milliseconds);
+
+            Bekertje lattemacchiato = italiaansekoffiemachine.GeefLattemacchiato();
+            lattemacchiato.Print();
+            Console.WriteLine(italiaansekoffiemachine);
+
+           // System.Threading.Thread.Sleep(milliseconds);
+            Bekertje cappuccino = italiaansekoffiemachine.GeefCappuccino();
+            // maak de koffiemachine aan
+            cappuccino.Print();
+            Console.WriteLine(italiaansekoffiemachine);
+
+
             Console.Read();
             // Doe dit net zo vaak totdat er een exeption optreedt
         }

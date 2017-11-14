@@ -52,17 +52,11 @@ namespace KoffieMachine
             this.Suikerklontjes = this.Suikerklontjes -= 2;
             this.Koffiebonen = this.Koffiebonen -= 4;
             this.Melkpoeder = this.Melkpoeder -= 5;
-            // Een cappuccino bestaat uit:
-            // 2 suikerklontjes
-            // 4 koffiebonen
-            // 10 gram melk
-            //this.Suikerklontjes -= 2;
-            //this.Suikerklontjes = this.Suikerklontjes - 2;
+           
 
-            Bekertje bekertje = new Bekertje( KoffieSoort.cappuccino );
-            //Console.WriteLine();
-            //bekertje.Print();
-            return bekertje;
+            Bekertje bekertjeC = new Bekertje( KoffieSoort.cappuccino );
+     
+            return bekertjeC;
         }
         public Bekertje GeefLattemacchiato()
         {
@@ -71,9 +65,9 @@ namespace KoffieMachine
             this.Suikerklontjes -= 1;
             this.Koffiebonen -= 3;
             this.Melkpoeder -= 5;
-            Bekertje bekertje = new Bekertje(KoffieSoort.lattemacchiato);
+            Bekertje bekertjeL = new Bekertje(KoffieSoort.lattemacchiato);
 
-            return bekertje;
+            return bekertjeL;
         }
         public Bekertje GeefKoffiezwart()
         {
@@ -82,9 +76,13 @@ namespace KoffieMachine
             this.Suikerklontjes -= 0;
             this.Koffiebonen -= 4;
             this.Melkpoeder -= 0;
-            Bekertje bekertje = new Bekertje(KoffieSoort.koffiezwart);
+            Bekertje bekertjeZ = new Bekertje(KoffieSoort.koffiezwart);
 
-            return bekertje;
+            return bekertjeZ;
+        }
+        public override string ToString()
+        {
+            return $"Deze automaat heeft {Suikerklontjes} suikerklontjes, {Koffiebonen} koffiebonen en {Melkpoeder} gram melkpoeder.";
         }
     }
 }
