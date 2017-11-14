@@ -16,12 +16,15 @@ namespace KoffieMachine
         private int Melkpoeder;
 
         // Vergeet de constructor niet
-        public KoffieMachine(int AantalSuikerklontjes, int Aantalkoffiebonen, int AantalMelkpoeder)
+        public KoffieMachine( int AantalSuikerklontjes, int Aantalkoffiebonen, int AantalMelkpoeder ) 
         {
-            Suikerklontjes = AantalSuikerklontjes;
-            Koffiebonen = Aantalkoffiebonen;
-            Melkpoeder = AantalMelkpoeder;
+            this.Suikerklontjes = AantalSuikerklontjes;
+            this.Koffiebonen = Aantalkoffiebonen;
+            this.Melkpoeder = AantalMelkpoeder;
         }
+
+      
+
         // en stel de private fields / velden in
 
         private void ControleerResources()
@@ -34,7 +37,7 @@ namespace KoffieMachine
             {
                 throw new Exception("BONEN OP");
             }
-            if( this.Melkpoeder <0)
+            if( this.Melkpoeder < 0)
             {
                 throw new Exception("Melk op");
             }
@@ -45,7 +48,10 @@ namespace KoffieMachine
         public Bekertje GeefCappuccino()
         {
             ControleerResources();
-
+            
+            this.Suikerklontjes = this.Suikerklontjes -= 2;
+            this.Koffiebonen = this.Koffiebonen -= 4;
+            this.Melkpoeder = this.Melkpoeder -= 5;
             // Een cappuccino bestaat uit:
             // 2 suikerklontjes
             // 4 koffiebonen
@@ -54,6 +60,29 @@ namespace KoffieMachine
             //this.Suikerklontjes = this.Suikerklontjes - 2;
 
             Bekertje bekertje = new Bekertje( KoffieSoort.cappuccino );
+            //Console.WriteLine();
+            //bekertje.Print();
+            return bekertje;
+        }
+        public Bekertje GeefLattemacchiato()
+        {
+            ControleerResources();
+
+            this.Suikerklontjes -= 1;
+            this.Koffiebonen -= 3;
+            this.Melkpoeder -= 5;
+            Bekertje bekertje = new Bekertje(KoffieSoort.lattemacchiato);
+
+            return bekertje;
+        }
+        public Bekertje GeefKoffiezwart()
+        {
+            ControleerResources();
+
+            this.Suikerklontjes -= 0;
+            this.Koffiebonen -= 4;
+            this.Melkpoeder -= 0;
+            Bekertje bekertje = new Bekertje(KoffieSoort.koffiezwart);
 
             return bekertje;
         }

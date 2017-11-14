@@ -13,18 +13,18 @@ namespace KoffieMachine
             SoortKoffie = koffieSoort;
         }
 
-        private void PrintKoffieZwart()
+        public void PrintKoffieZwart()
         {
             Console.WriteLine("Koffie zwart");
         }
 
-        private void PrintLatteMacchiato()
+        public void PrintLatteMacchiato()
         {
             Console.WriteLine("Gewoon een bak melk");
         }
 
        
-        private void PrintCappuccino()
+        public void PrintCappuccino()
         {
             Console.WriteLine("          {");
             Console.WriteLine("       }   }   {");
