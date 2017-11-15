@@ -6,13 +6,15 @@ namespace KoffieMachine
 {
     class Bekertje
     {
+        //instantie variabele 
         private KoffieSoort SoortKoffie;
 
+        //constructor
         public Bekertje(KoffieSoort koffieSoort)
         {
             SoortKoffie = koffieSoort;
         }
-
+        //methods
         public void PrintKoffieZwart()
         {
             Console.WriteLine("Koffie zwart");
