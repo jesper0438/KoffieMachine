@@ -27,19 +27,45 @@ namespace KoffieMachine
 
         // en stel de private fields / velden in
 
-        private void ControleerResources()
+        private void ControleerResourcesCappuccino()
         {
-            if( this.Suikerklontjes < 0)
+            if( this.Suikerklontjes < 2)
             {
                 throw new Exception("DE SUIKER IS OP!!!");
             }
-            if( this.Koffiebonen < 0)
+            if( this.Koffiebonen < 4)
             {
                 throw new Exception("BONEN OP");
             }
-            if( this.Melkpoeder < 0)
+            if( this.Melkpoeder < 5)
             {
                 throw new Exception("Melk op");
+            }
+
+            // Vul dit aan voor de overige velden
+        }
+        private void ControleerResourcesLattemacchiato()
+        {
+            if (this.Suikerklontjes < 1)
+            {
+                throw new Exception("DE SUIKER IS OP!!!");
+            }
+            if (this.Koffiebonen < 3)
+            {
+                throw new Exception("BONEN OP");
+            }
+            if (this.Melkpoeder < 5)
+            {
+                throw new Exception("Melk op");
+            }
+
+            // Vul dit aan voor de overige velden
+        }
+        private void ControleerResourcesKoffiezwart()
+        {
+            if (this.Koffiebonen < 0)
+            {
+                throw new Exception("BONEN OP");
             }
 
             // Vul dit aan voor de overige velden
@@ -47,7 +73,7 @@ namespace KoffieMachine
 
         public Bekertje GeefCappuccino()
         {
-            ControleerResources();
+            ControleerResourcesCappuccino();
             
             this.Suikerklontjes = this.Suikerklontjes -= 2;
             this.Koffiebonen = this.Koffiebonen -= 4;
@@ -60,7 +86,7 @@ namespace KoffieMachine
         }
         public Bekertje GeefLattemacchiato()
         {
-            ControleerResources();
+            ControleerResourcesLattemacchiato();
 
             this.Suikerklontjes -= 1;
             this.Koffiebonen -= 3;
@@ -71,7 +97,7 @@ namespace KoffieMachine
         }
         public Bekertje GeefKoffiezwart()
         {
-            ControleerResources();
+            ControleerResourcesKoffiezwart();
 
             this.Suikerklontjes -= 0;
             this.Koffiebonen -= 4;
